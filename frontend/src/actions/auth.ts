@@ -22,6 +22,9 @@ export async function registerAction(
 
     await apiClient<User>("/users", {
       method: "POST",
+      headers: {
+    'Content-Type': 'application/json' // <--- Adicione essa propriedade aqui
+  },
       body: JSON.stringify(data),
     });
 

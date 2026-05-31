@@ -16,7 +16,7 @@ class AuthUserService {
     });
 
     if (!user) {
-      throw new Error("Email/Senha e obrigatorio");
+      throw new Error("Email/Senha é obrigatorio");
     }
 
     const passwordMatch = await compare(password, user.password);
