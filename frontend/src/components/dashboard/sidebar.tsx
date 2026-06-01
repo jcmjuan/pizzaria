@@ -37,7 +37,7 @@ export function Sidebar({ userName }: SidebarProps) {
       {/*  HEADER */}
       <div className="border-b border-app-border p-6">
         <h2 className="text-xl font-bold text-white">
-          Sujeito<span className="text-brand-primary">Pizza</span>
+          SN<span className="text-brand-primary">Pizza</span>
         </h2>
         <p className="text-sm text-gray-300 mt-1">Olá, {userName}</p>
       </div>

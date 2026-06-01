@@ -101,7 +101,7 @@ export function MobileSidebar() {
           </Sheet>
 
           <h1 className="text-lg font-bold">
-            Sujeito<span className="text-brand-primary">Pizza</span>
+            SN<span className="text-brand-primary">Pizza</span>
           </h1>
           <div className="w-10"></div>
         </div>

@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* 🍕 Cores Customizadas do Projeto - SujeitoPizza */
+  /* 🍕 Cores Customizadas do Projeto - SNPizza */
   --color-brand-primary: oklch(
     0.62 0.25 12
   ); /* #FF3F4B - Vermelho da pizzaria */
