@@ -218,7 +218,7 @@ export function ProductForm({ categories }: ProductFormProps) {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="file" className="mb-2">
+            <Label className="mb-2">
               Imagem do produto
             </Label>
             {imagePreview ? (
