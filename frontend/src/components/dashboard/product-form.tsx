@@ -240,14 +240,14 @@ export function ProductForm({ categories }: ProductFormProps) {
                 </Button>
               </div>
             ) : (
-              <div className="border-2 border-dashed rounded-md p-8 flex flex-col items-center justify-center">
+              <div className="border-2 border-dashed rounded-md p-8 flex flex-col items-center justify-center cursor-pointer transition-colors hover:bg-gray-800/30">
                 <Upload className="h-8 w-8 mx-auto text-gray-400 mb-2" />
                 <Label htmlFor="file">Clique para selecionar uma imagem</Label>
                 <Input
                   id="file"
                   name="file"
                   type="file"
-                  accept="image/jpeg,image/jpg,image/png"
+                  accept="image/jpeg,image/jpg,image/png,image/webp"
                   onChange={handleImageChange}
                   required
                   className="hidden"
