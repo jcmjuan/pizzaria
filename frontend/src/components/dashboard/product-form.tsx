@@ -240,9 +240,17 @@ export function ProductForm({ categories }: ProductFormProps) {
                 </Button>
               </div>
             ) : (
-              <div className="border-2 border-dashed rounded-md p-8 flex flex-col items-center justify-center cursor-pointer transition-colors hover:bg-gray-800/30">
+              /* 1. Mantemos como div, mas adicionamos "relative" para ancorar o input invisível */
+              <div className="relative border-2 border-dashed rounded-md p-8 flex flex-col items-center justify-center transition-colors hover:bg-gray-800/30 cursor-pointer">
                 <Upload className="h-8 w-8 mx-auto text-gray-400 mb-2" />
-                <Label htmlFor="file">Clique para selecionar uma imagem</Label>
+                
+                {/* 2. Mudamos de <Label> para um <span> simples para não dar conflito de cliques */}
+                <span className="text-sm font-medium text-gray-200">
+                  Clique para selecionar uma imagem
+                </span>
+                
+                {/* 3. O SEGREDO: O <Input> agora perde a classe "hidden" e ganha classes que o fazem 
+                    ficar gigante cobrindo toda a área pontilhada, mas completamente invisível (opacity-0) */}
                 <Input
                   id="file"
                   name="file"
@@ -250,7 +258,7 @@ export function ProductForm({ categories }: ProductFormProps) {
                   accept="image/jpeg,image/jpg,image/png,image/webp"
                   onChange={handleImageChange}
                   required
-                  className="hidden"
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
                 />
               </div>
             )}
