@@ -38,13 +38,29 @@ export function Orders({ token }: OrdersProps) {
     }
   };
 
-  useEffect(() => {
+ /* useEffect(() => {
     async function loadOrders() {
       await fetchOrders();
     }
 
     loadOrders();
-  }, []);
+  }, []);*/
+
+useEffect(() => {
+  // 1. Carrega os pedidos imediatamente ao abrir a tela
+  fetchOrders();
+
+  // 2. Define o intervalo para atualizar automaticamente a cada 30 segundos
+  const intervalId = setInterval(() => {
+    fetchOrders();
+    console.log("Atualizando lista de pedidos automaticamente...");
+  }, 30000);
+
+  // 3. Desliga o timer se o usuário fechar a tela
+  return () => {
+    clearInterval(intervalId);
+  };
+}, [token]);
 
   const calculateOrderTotal = (order: Order) => {
     if (!order.items) return 0;
